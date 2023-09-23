@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <link rel="stylesheet" href="../css/estilo.css">
+    <!--<script src="../javascript/comandos.js"></script>-->
 </head>
+
 <body>
-    <h1>Login</h1>
+    <div class="container">
+        <h1 class="titulo">Login</h1>
+        <form>
+            <fieldset>
+                <label for="nome"><strong>Nome de usuário</strong></label>
+                <div class="entrada_dados">
+                    
+                    <input type="text" nome="usuario" placeholder="Usuário" >
+                </div>
+
+                <label for="senha"><strong>Senha</strong></label>
+                <div class="entrada_dados">
+                    
+                    <input type="password" nome="senha" placeholder="Senha" >
+                </div>
+
+                <div class="botao">
+                    <button type="submit">Enviar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>
