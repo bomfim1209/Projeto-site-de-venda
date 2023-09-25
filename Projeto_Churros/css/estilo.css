@@ -51,13 +51,13 @@ fieldset{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*.entrada_dados i{
+.entrada_dados i{
     font-size: 1.2rem;
     padding: 5px;
-    background: -webkit-linear-gradient(-45deg,green, purple, chocolate);
+    background: -webkit-linear-gradient(45deg, gold, rgb(167, 81, 19));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}*/
+}
 
 .botao{
     margin-top: 10%;
