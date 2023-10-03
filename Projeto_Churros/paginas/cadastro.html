@@ -9,123 +9,123 @@
     <!--<script src="../javascript/comandos.js"></script>-->
 </head>
 
-<body>
-
-    <div class="container">
-        <div>
-            <h1 id="titulo"> Criar Conta</h1>
-            <p id="subtitulo">Já possui uma conta? <a href="login.html">Faça login</a></p>
-            <br>
+<body class="body-cadastro">
+    <div class="container-cadastro">
+        <!-- LADO DIREITO -->
+        <div class="imagem-texto">
+            <div class="centro-imagem">
+                <h1 id="titulo"> Criar Conta</h1>
+                <p id="subtitulo">Já possui uma conta?</p>
+                <a class="login" href="login.html">Login</a>
+            </div>
         </div>
-
-        <form class="inputs">
-            <fieldset class="nome_data_cpf"> <!--Campo para agrupar nome, data, CPF e Sexo -->
-                <div class="campo">
+        
+        <!-- LADO ESQUERDO -->
+        <div class="cadastro">
+            <form class="formulario">
+                <div class="entrada-dados-cadastro">
+                    <label for="nome_completo"><strong>Nome completo</strong></label>
+                    <input type="text" name="nome_completo" id="nome_completo" min="15" max="60" pattern="[A-z]" required>
+                </div>
+                
+                <div class="entrada-dados-cadastro">
                     <label for="cpf"><strong>CPF</strong></label>
                     <input type="text" name="cpf" id="cpf" placeholder="Ex: 123.456.789-00" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"  required>
                 </div>
                                 
-                <div>
-                    <label for="nome_completo"><strong>Nome completo</strong></label>
-                    <input type="text" name="nome_completo" id="nome_completo" min="15" max="60" pattern="[A-z]" required>
-                </div>
-
-                <div>
+                <div class="entrada-dados-cadastro">
                     <label for="data_nascimento"><strong>Data de nascimento</strong></label>
                     <input type="date" name="data_nascimento" id="data_nascimento" placeholder="dd/mm/aaaa" required>
                 </div>
-
-                <div>
-                    <label for="sexo"><strong>Sexo</strong></label>
-                    <select id="sexo" required>
-                        <option selected disabled value="">Escolha</option>
-                        <option>Masculino</option>
-                        <option>Feminino</option>
-                        <option>Não responder</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="nome_materno"><strong>Nome Materno</strong></label>
-                    <input type="text" name="nome_materno" id="nome_materno" min="15" max="60" pattern="[A-z]" required>
-                </div>
-            </fieldset>
-
-            <fieldset> <!--Contato-->
-                <div>
+    
+                <div  class="entrada-dados-cadastro">
                     <label for="email"><strong>E-mail</strong></label>
                     <input type="email" name="email" id="email" required>
                 </div>
-
-                <div>
+    
+                <div  class="entrada-dados-cadastro">
                     <label for="tel_celular"><strong>Telefone Celular</strong></label>
                     <!--Localizar o erro--><input type="tel" name="tel_celular" id="tel_celular" placeholder="(+55)xx-xxxxxxxxx" pattern="[0-9]{2}-[0-9]{9}" required>
                 </div>
-
-                <div>
-                    <label for="tel_fixo"><strong>Telefone Fixo</strong></label>
-                    <!--Localizar o erro--><input type="tel" name="tel_fixo" id="tel_celular" placeholder="(+55)xx-xxxxxxxx" pattern="[0-9]{2}-[0-9]{8}" required>
+    
+                <div class="entrada-dados-cadastro">
+                    <label for="cep"><strong>CEP</strong></label>
+                    <input type="text" name="cep" id="cep" placeholder="Ex: 21900-500" pattern="\d{5}-?\d{3}"  required>
                 </div>
-            </fieldset>
-
-            <fieldset><!--Endereço-->
-                <div><!--Campo de preenchimento automatico pelo CEP-->
-                    <div>
-                        <label for="cep"><strong>CEP</strong></label>
-                        <input type="text" name="cep" id="cep" placeholder="Ex: 21900-500" pattern="\d{5}-?\d{3}"  required>
-                    </div>
-
-                    <div>
-                        <label for="rua_avenida"><strong>Rua/Avenida</strong></label>
-                        <input type="text" name="rua_avenida">
-                    </div>
-
-                    <div>
-                        <label for="bairro"><strong>Bairro</strong></label>
-                        <input type="text" name="bairro">
-                    </div>
-
-                    <div>
-                        <label for="cidade"><strong>Cidade</strong></label>
-                        <input type="text" name="cidade">
-                    </div>
-
-                    <div>
-                        <label for="estado"><strong>Estado</strong></label>
-                        <input type="text" name="estado">
-                    </div>
+                
+                <div class="entrada-dados-cadastro">
+                    <label for="rua_avenida"><strong>Rua/Avenida</strong></label>
+                    <input type="text" name="rua_avenida">
                 </div>
-
-                <div>
+                
+                <div class="entrada-dados-cadastro">
+                    <label for="bairro"><strong>Bairro</strong></label>
+                    <input type="text" name="bairro">
+                </div>
+                
+                <div class="entrada-dados-cadastro">
+                    <label for="cidade"><strong>Cidade</strong></label>
+                    <input type="text" name="cidade">
+                </div>
+                
+                <div class="entrada-dados-cadastro">
+                    <label for="estado"><strong>Estado</strong></label>
+                    <input type="text" name="estado">
+                </div>
+    
+                <div class="entrada-dados-cadastro">
                     <label for="numero"><strong>Número</strong></label>
                     <input type="text" name="numero" id="numero" max="6" required>
                 </div>
-
-                <div>
+                
+                <div class="entrada-dados-cadastro">
                     <label for="complemento"><strong>Complemento</strong></label>
                     <input type="text" name="complemento" id="complemento" required>
                 </div>
-            </fieldset>
-
-            <fieldset><!--Login e senha-->
-                <div>
+                
+                <div class="entrada-dados-cadastro">
                     <label for=""><strong>Login</strong></label>
                     <input type="text" name="login" id="login" min="6" max="6" pattern="[A-z]" required>
                 </div>
-
-                <div>
+                
+                <div class="entrada-dados-cadastro">
                     <label for=""><strong>Senha</strong></label>
-                    <input type="text" name="senha" id="senha" min="8" max="8" pattern="[A-z]" required>
+                    <input type="password" name="senha" id="senha" min="8" max="8" pattern="[A-z]" required>
                 </div>
-
-                <div>
+                
+                <div class="entrada-dados-cadastro">
                     <label for=""><strong>Confirmar Senha</strong></label>
-                    <input type="text" name="conf_senha" id="conf_senha" min="8" max="8" pattern="[A-z]" required>
+                    <input type="password" name="conf_senha" id="conf_senha" min="8" max="8" pattern="[A-z]" required>
                 </div>
-            </fieldset>
 
-            <button class="botao" type="submit">Salvar</button>
-        </form>
+                <div class="caixaGenero">
+                    <h6>Sexo</h6>
+                    <div class="boxInputs">
+                        <div class="generoInput">
+                            <input type="radio" id="masculino" name="genero">
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div class="generoInput">
+                            <input type="radio" id="feminino" name="genero">
+                            <label for="feminino">Feminino</label>
+                        </div>
+                        <div class="generoInput">
+                            <input type="radio" id="outro" name="genero">
+                            <label for="outro">Outro</label>
+                        </div>
+
+                        <div class="generoInput">
+                            <input type="radio" id="nao-responder" name="genero">
+                            <label for="outro">Prefiro não responder</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="botao-cadastro">
+                    <button class="botao-primario" type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

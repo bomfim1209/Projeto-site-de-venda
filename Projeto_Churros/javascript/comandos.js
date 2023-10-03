@@ -1,3 +1,32 @@
+function validacao(){
+    var nome = document.getElementById("");
+    if(nome.value == ""){
+        alert("Nome não informado");
+        nome.focus();
+    }
+}
+
+
+const mode = document.getElementById('variavel do icone');
+
+mode.addEventListener('click', ()=> {
+    const form = document.getElementById('nome da classe');
+    if(mode.classList.contains('nome da classe do icone')){
+        mode.classList.remove('nome da classe do icone');
+        mode.classList.add('nome da classe do icone');
+
+        form.classList.add('dark');
+        return;
+    }
+
+    mode.classList.add('nome da classe do icone');
+    mode.classList.remove('nome da classe do icone');
+    form.classList.remove('dark');
+});
+
+
+/////////////////////////////////////////////////////////////
+
 (function(){ 
  
     const cep = document.querySelector("input[name=cep]");
