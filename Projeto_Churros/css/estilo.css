@@ -82,7 +82,9 @@ fieldset{
 }
 
 #botao-voltar{
-    display: flex;
+    cursor: pointer;
+    font-size: 25px;
+    color: black;
 }
 
 .botao-login{
@@ -140,6 +142,17 @@ fieldset{
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 10%; 
+}
+
+#item-lua{
+    font-size: 20px;
+}
+
+.botoes-topo-login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5%;
 }
 
 .entrada_dados{
