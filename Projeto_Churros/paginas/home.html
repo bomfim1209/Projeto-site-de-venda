@@ -4,42 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home.css">
     <title>Paixão churros | Delivery</title>
+    <link rel="shorcut icon" href="../imagens/logo-black.jpeg">
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/menu-mobile.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="shorcut icon" href="../imagens/logo-black.jpeg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+
+    <script src="../javascript/comandos.js"></script>
+
     <header>
         <nav class="nav-bar">
-
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item"><a href="#" class="nav-link"><b>CONTATO</b></a></li>
-                    <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
-                </ul>
-            </div>
 
             <div class="logo">
                 <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
             </div>
-
-            <div class="nav-list2">
+            
+            <div class="nav-list">
                 <ul>
+                    <li class="nav-item"><a href="#" class="nav-link"><b>CONTATO</b></a></li>
+                    <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cadastro.html" class="nav-link"><b>CADASTRO</b></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><b>CARRINHO</b></a></li>
+                    <li class="login-button"><a href="login.html"><b>LOGIN</b></a></li>
                 </ul>
             </div>
 
-            <div class="login-button">
-                <button><a href="login.html"><b>LOGIN</b></a></button>
+            
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()">
+                    <img class="icon" src="../imagens/menu_white_36dp.svg">
+                </button>
             </div>
-
         </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link"><b>CONTATO</b></a></li>
+                <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
+                <li class="nav-item"><a href="cadastro.html" class="nav-link"><b>CADASTRO</b></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>CARRINHO</b></a></li>
+                <li class="login-button"><a href="login.html"><b>LOGIN</b></a></li>
+            </ul>
+        </div>
+
     </header>
 
     <main>

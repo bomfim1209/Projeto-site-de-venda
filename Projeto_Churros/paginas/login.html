@@ -13,38 +13,48 @@
     
 </head>
 
-<body class="body-login">
-    <div id="container-login">
+<body>
+    <header>
+        <nav class="nav-bar-simples">
+            <div class="logo">
+                <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
+            </div>
+        </nav>
+    </header>
 
-        <div class="botoes-topo-login">
-            <a id="botao-voltar" href="home.html"><i class="fa-solid fa-left-long"></i></a>
-            <i id="item-lua" class="fa-solid fa-moon"></i>
-        </div>
-        
-        <form>
-            <h1 class="titulo">Login </h1>
+    <main class="body-login">
+        <div class="container-login">
+
+            <div class="botoes-topo-tela-login">
+                <a id="botao-voltar" href="home.html"><i class="fa-solid fa-left-long"></i></a>
+                <i id="item-lua" class="fa-solid fa-moon"></i>
+            </div>
             
-            <fieldset>
-                <label for="nome"><strong>Nome de usuário</strong></label>
-                <div class="entrada_dados">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" nome="usuario" id="email-validacao" placeholder="Usuário" required>
-                </div>
-
-                <label for="senha"><strong>Senha</strong></label>
-                <div class="entrada_dados">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" nome="senha" id="senha-validacao" placeholder="Senha" required>
-                </div>
-
-                <div class="botao-login">
-                    <button class="botao-primario" type="submit" onclick="validacao()">Enviar</button>
-                    ou
-                    <button class="botao-secundario"><a href="cadastro.html">Cadastrar Novo Usuario</a></button>
-                </div>
+            <form>
+                <h1 class="titulo">Login </h1>
                 
-            </fieldset>
-        </form>
-    </div>
+                <fieldset>
+                    <label for="nome"><strong>Nome de usuário</strong></label>
+                    <div class="entrada_dados">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" nome="usuario" id="email-validacao" placeholder="Usuário" required>
+                    </div>
+    
+                    <label for="senha"><strong>Senha</strong></label>
+                    <div class="entrada_dados">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" nome="senha" id="senha-validacao" placeholder="Senha" required>
+                    </div>
+    
+                    <div class="botao-login">
+                        <button class="botao-primario" type="submit" onclick="validacao()">Enviar</button>
+                        ou
+                        <button class="botao-secundario"><a href="cadastro.html">Cadastrar Novo Usuario</a></button>
+                    </div>
+                    
+                </fieldset>
+            </form>
+        </div>    
+    </main>
 </body>
 </html>
