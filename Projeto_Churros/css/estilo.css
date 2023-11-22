@@ -1,7 +1,19 @@
+:root{
+    /* Light */
+    --color-light-50: #f8fafc;
+
+    /* Dark */
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+}
+
+
 /*/////////////////// USO GERAL ///////////////////*/
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 fieldset{
@@ -54,43 +66,48 @@ header {
     font-size: 20px;
 }
 
-/* Modo dark e ligth*/
-/*body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-mode .container {
-    background-color: #333;
-    color: #fff;
-}*/
-
 .dark#container-login {
-    color: #f8faf8;
-    background-color: #312d37;
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
     animation: light-to-dark-background 0.3s ease-in-out;
 }
 
 .dark#container-login .input-field input,
-.dark#container-login .input-field i {
-    color: #f8faf8;
+.dark#container-login .input-field i{
+    color: var(--color-light-50);
 }
+
+.dark#container-login .entrada_dados #email-validacao,
+.dark#container-login .entrada_dados #senha-validacao{
+    background-color: var(--color-dark-100);
+    color: var(--color-light-50);
+}
+
+.dark#container-login ::placeholder{
+    color: var(--color-light-50);
+    opacity: 0.7;
+}
+
+.dark#container-login #botao-voltar{
+    color: var(--color-light-50);   
+} 
+
 
 @keyframes dark-to-light-background {
     0% {
-        background-color: #312d37;
+        background-color:var(--color-dark-100);
     }
-    100% {
-        background-color: #f8faf8;
+    100.0% {
+        background-color:var(--color-light-50);
     }
 }
 
 @keyframes light-to-dark-background {
     0% {
-        background-color: #f8faf8;
+        background-color:var(--color-light-50);
     }
-    100% {
-        background-color: #312d37;
+    100.0% {
+        background-color:var(--color-dark-100); 
     }
 }
 
@@ -112,7 +129,7 @@ header {
     align-items: center;
 }
 
-.container-login{
+#container-login{
     background-color: white;
     border-radius: 10px;
     padding: 60px;
@@ -129,6 +146,7 @@ header {
 
 #item-lua{
     font-size: 20px;
+    cursor: pointer;
 }
 
 .botao-login{
@@ -233,7 +251,7 @@ header {
         align-items: center;
     }
 
-    .container-login{
+    #container-login{
         background-color: white;
         border-radius: 10px;
         padding: 15px;
@@ -251,6 +269,7 @@ header {
     #item-lua{
         font-size: 20px;
         padding: 12px;
+        cursor: pointer;
     }
     
     .botao-login{

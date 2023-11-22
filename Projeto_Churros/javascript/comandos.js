@@ -28,7 +28,7 @@ function menuShow() {
 
 
 ///////// Modo Dark /////////
-const mode = document.getElementById("icone-lua");
+const mode = document.getElementById("item-lua");
 
 mode.addEventListener("click", () => {
     const form = document.getElementById("container-login");
@@ -41,8 +41,9 @@ mode.addEventListener("click", () => {
         return;
     }
 
-    mode.classList.add("fa-sun");
-    mode.classList.remove("fa-moon");
+    mode.classList.remove('fa-sun');
+    mode.classList.add('fa-moon');
+
     form.classList.remove("dark");
 });
 
@@ -137,3 +138,5 @@ function validate() {
     return false;
 }
 $("#validate").bind("click", validate);
+
+// BOTÃO PARA TOPO D PAGINA

@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../css/menu-mobile.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 </head>
 
 <body>
 
     <script src="../javascript/comandos.js"></script>
 
-    <header>
+    <header id="topo">
         <nav class="nav-bar">
 
             <div class="logo">
@@ -27,11 +27,12 @@
             
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="#" class="nav-link"><b>CONTATO</b></a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                     <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cadastro.html" class="nav-link"><b>CADASTRO</b></a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><b>CARRINHO</b></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><b>MENU</b></a></li>
                     <li class="login-button"><a href="login.html"><b>LOGIN</b></a></li>
+                    <li class="login-button"><i id="item-lua" class="fa-solid fa-moon"></i></li>
                 </ul>
             </div>
 
@@ -45,10 +46,10 @@
 
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#" class="nav-link"><b>CONTATO</b></a></li>
+                <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                 <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                 <li class="nav-item"><a href="cadastro.html" class="nav-link"><b>CADASTRO</b></a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><b>CARRINHO</b></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>MENU</b></a></li>
                 <li class="login-button"><a href="login.html"><b>LOGIN</b></a></li>
             </ul>
         </div>
@@ -136,19 +137,28 @@
             </p>
         </div>
 
-    <div class="text_colorido">
-       <p> Então, não espere mais! Faça seu pedido e mergulhe na deliciosa experiência. 
-        Mal podemos esperar para te surpreender a cada mordida!</p>
-    </div>
+        <div class="text_colorido">
+        <p> Então, não espere mais! Faça seu pedido e mergulhe na deliciosa experiência. 
+            Mal podemos esperar para te surpreender a cada mordida!</p>
+        </div>
 
-    <div class="button_cardapio">
-        <button><a href="#"> CONHECER CARDÁPIO </a></button>
-    </div>
+        <div class="button_cardapio">
+            <button><a href="#"> CONHECER CARDÁPIO </a></button>
+        </div>
+        
+        <div>
+            <a class="botao-back-topo" href="#topo">
+                <i id="botao-topo" class="fa-solid fa-circle-up"></i>
+            </a>
+        </div>
+
+        <script type="text/javascript" src="../javascript/comandos.js"></script>
     </main>
+
 
     <footer>
         <section>
-            <h2>NOSSAS REDES PARA CONTATO</h2>
+            <h2 id="contato">NOSSAS REDES PARA CONTATO</h2>
 
             <div class="contatos">
                 <ul>
