@@ -26,23 +26,23 @@ function menuShow() {
     }
 }
 
-
 ///////// Modo Dark /////////
-const mode = document.getElementById("item-lua");
+///////// Modo Dark Login /////////
+const login = document.getElementById("item-lua");
 
-mode.addEventListener("click", () => {
-    const form = document.getElementById("container-login");
+login.addEventListener("click", () => {
+    const form = document.getElementById("container");
 
-    if(mode.classList.contains("fa-moon")){
-        mode.classList.remove("fa-moon");
-        mode.classList.add("fa-sun");
+    if(login.classList.contains("fa-moon")){
+        login.classList.remove("fa-moon");
+        login.classList.add("fa-sun");
 
         form.classList.add("dark");
         return;
     }
 
-    mode.classList.remove('fa-sun');
-    mode.classList.add('fa-moon');
+    login.classList.remove('fa-sun');
+    login.classList.add('fa-moon');
 
     form.classList.remove("dark");
 });
@@ -59,18 +59,18 @@ function limpa_formulário_cep() {
 }
 
 function meu_callback(conteudo) {
-if (!("erro" in conteudo)) {
-    //Atualiza os campos com os valores.
-    document.getElementById('Rua/Avenida').value=(conteudo.logradouro);
-    document.getElementById('Bairro').value=(conteudo.bairro);
-    document.getElementById('Cidade').value=(conteudo.localidade);
-    document.getElementById('Estado').value=(conteudo.uf);
-} //end if.
-else {
-    //CEP não Encontrado.
-    limpa_formulário_cep();
-    alert("CEP não encontrado.");
-}
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('Rua/Avenida').value=(conteudo.logradouro);
+        document.getElementById('Bairro').value=(conteudo.bairro);
+        document.getElementById('Cidade').value=(conteudo.localidade);
+        document.getElementById('Estado').value=(conteudo.uf);
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulário_cep();
+        alert("CEP não encontrado.");
+    }
 }
 
 function pesquisacep(valor) {

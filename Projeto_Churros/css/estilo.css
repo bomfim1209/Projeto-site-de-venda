@@ -3,7 +3,7 @@
     --color-light-50: #f8fafc;
 
     /* Dark */
-    --color-dark-50: #797984;
+    --color-dark-50: rgb(75, 75, 78);
     --color-dark-100: #312d37;
     --color-dark-900: #000;
 }
@@ -66,32 +66,47 @@ header {
     font-size: 20px;
 }
 
-.dark#container-login {
+
+.dark#container, .dark#container .texto-login, .dark#container .cadastro, 
+.dark#container .campo-login, .dark#container .cadastro-mobille{
     color: var(--color-light-50);
-    background-color: var(--color-dark-100);
+    background: var(--color-dark-100);
     animation: light-to-dark-background 0.3s ease-in-out;
 }
 
-.dark#container-login .input-field input,
-.dark#container-login .input-field i{
+.dark#container .texto-login{
+    color: var(--color-light-50);
+    background: var(--color-dark-50);
+    animation: light-to-dark-background 0.3s ease-in-out;
+}
+
+.dark#container .input-field input,
+.dark#container .input-field i{
     color: var(--color-light-50);
 }
 
-.dark#container-login .entrada_dados #email-validacao,
-.dark#container-login .entrada_dados #senha-validacao{
-    background-color: var(--color-dark-100);
+/*TELA LOGIN*/
+.dark#container .entrada_dados input, .dark#container .entrada-dados-cadastro input,
+.dark#container .entrada-dados-cadastro-mobille input{
+    background: var(--color-dark-100);
     color: var(--color-light-50);
 }
 
-.dark#container-login ::placeholder{
+.dark#container .entrada_dados, 
+.dark#container .entrada-dados-cadastro input{
+    border: 2px var(--color-light-50) solid;
+}
+
+
+/*TELA CADASTRO*/
+.dark#container ::placeholder{
     color: var(--color-light-50);
     opacity: 0.7;
 }
 
-.dark#container-login #botao-voltar{
+.dark#container #botao-voltar{
     color: var(--color-light-50);   
 } 
-
 
 @keyframes dark-to-light-background {
     0% {
@@ -129,7 +144,7 @@ header {
     align-items: center;
 }
 
-#container-login{
+.container-login{
     background-color: white;
     border-radius: 10px;
     padding: 60px;
@@ -251,7 +266,7 @@ header {
         align-items: center;
     }
 
-    #container-login{
+    .container-login{
         background-color: white;
         border-radius: 10px;
         padding: 15px;
@@ -386,22 +401,21 @@ header {
 }
 
 /*LADO DIREITO COM TITULO E IMAGEM*/
-.imagem-texto{
+.texto-login{
     width: 30%;
     text-shadow: 1px 6px 13px #00000054;
     background: linear-gradient(-45deg, rgb(17, 10, 213), rgb(201, 10, 10));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 15px;
 }
 
-.centro-imagem{
+.centro-texto{
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
     text-transform: uppercase;
     font-size: 18px;
+    margin: 100% auto;
 }
 
 .login{
@@ -427,11 +441,17 @@ header {
 
 /*LADO ESQUERDO DO FORMULARIO*/
 
+.botoes-topo-tela-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
 .cadastro{
     width: 70%;
     padding: 25px;
     background-color: #ffffff;
-    
 }
 
 .formulario{
@@ -456,7 +476,7 @@ header {
     width: 220px;
     margin: 0.2rem 0;
     padding: 0.8rem 1.2rem;
-    border: 1px black solid;
+    border: 2px black solid;
     background-color: #f0f0f0;
     border-radius: 20px;
     font-weight: 600;
@@ -503,6 +523,32 @@ header {
         justify-content: center;
     }
 
+    #botao-voltar{
+        font-size: 25px;
+        color: black;
+        padding: 7px;
+    }
+
+    #item-lua{
+        font-size: 20px;
+        padding: 12px;
+        cursor: pointer;
+    }
+
+    .botoes-topo-tela-cadastro-mobille{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5%;
+    }
+
+    .centro-texto-mobille{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .body-cadastro-mobille{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         background: linear-gradient(-45deg, gold, rgb(167, 81, 19));
@@ -524,11 +570,7 @@ header {
         background: #ffffff;
     }
     
-    .campo-titulo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+    .campo-login{
         background: linear-gradient(-45deg, rgb(17, 10, 213), rgb(201, 10, 10));
         color: white;
         text-transform: uppercase;
