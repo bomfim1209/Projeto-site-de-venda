@@ -380,6 +380,13 @@ header {
 .entrada-dados-cadastro{
     position: relative;
     margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.aviso{
+    text-transform: capitalize;
+    opacity: 0.5;
 }
 
 .entrada-dados-cadastro label{
@@ -417,7 +424,7 @@ header {
     margin-right: 0.3rem;
 }
 
-/* Versão mobille */
+/* //////////// Versão mobille ////////// */
 .container-cadastro-mobille{
     display: none;
 }

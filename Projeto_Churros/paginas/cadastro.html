@@ -98,27 +98,30 @@
         
                     <div class="entrada-dados-cadastro">
                         <label for="numero"><strong>Número</strong></label>
-                        <input type="text" name="numero" id="numero" max="6" required>
+                        <input type="text" name="numero" id="numero" max="6" placeholder="258" required>
                     </div>
                     
                     <div class="entrada-dados-cadastro">
                         <label for="complemento"><strong>Complemento</strong></label>
-                        <input type="text" name="complemento" id="complemento" required>
+                        <input type="text" name="complemento" id="complemento" placeholder="casa" required>
                     </div>
                     
                     <div class="entrada-dados-cadastro">
                         <label for=""><strong>Login</strong></label>
                         <input type="text" name="login" id="login" min="6" max="6" pattern="[A-z]" required>
+                        <span class="aviso">*O nome deve conter 6 caracteres</span>
                     </div>
                     
                     <div class="entrada-dados-cadastro">
                         <label for=""><strong>Senha</strong></label>
                         <input type="password" name="senha" id="senha" min="8" max="8" pattern="[A-z]" required>
+                        <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
                     
                     <div class="entrada-dados-cadastro">
                         <label for=""><strong>Confirmar Senha</strong></label>
                         <input type="password" name="conf_senha" id="conf_senha" min="8" max="8" pattern="[A-z]" required>
+                        <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
     
                     <div class="caixaGenero">
@@ -145,7 +148,7 @@
                     </div>
         
                     <div class="botao-cadastro">
-                        <button class="botao-primario" type="submit">Cadastrar</button>
+                        <button class="botao-primario" type="submit" onclick="validacao_cadastro()">Cadastrar</button>
                     </div>
                 </form>
             </div>
@@ -237,16 +240,19 @@
                     <div class="entrada-dados-cadastro-mobille">
                         <label for=""><strong>Login</strong></label>
                         <input type="text" name="login" id="login" min="6" max="6" pattern="[A-z]" required>
+                        <span class="aviso">*O nome deve conter 6 caracteres</span>
                     </div>
                     
                     <div class="entrada-dados-cadastro-mobille">
                         <label for=""><strong>Senha</strong></label>
                         <input type="password" name="senha" id="senha" min="8" max="8" pattern="[A-z]" required>
+                        <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
                     
                     <div class="entrada-dados-cadastro-mobille">
                         <label for=""><strong>Confirmar Senha</strong></label>
                         <input type="password" name="conf_senha" id="conf_senha" min="8" max="8" pattern="[A-z]" required>
+                        <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
     
                     <div class="caixaGenero-mobille">
@@ -273,7 +279,7 @@
                     </div>
         
                     <div class="botao-cadastro-mobille">
-                        <button class="botao-primario-mobille" type="submit">Cadastrar</button>
+                        <button class="botao-primario" type="submit" onclick="validacao_cadastro()">Cadastrar</button>
                     </div>
                 </form>
             </div>

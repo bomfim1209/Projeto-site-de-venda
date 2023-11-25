@@ -14,19 +14,6 @@
 }
 
 
-.botao-back-topo{
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    text-decoration: none;
-}
-
-#botao-topo{
-  font-size: 40px;
-  color: #ff8c00;
-  background: black;
-  border-radius: 50px;
-}
 /* MENU NAVEGADOR */
 header {
     background-color: #1A1818;
@@ -57,11 +44,6 @@ header {
 }
 
 
-.nav-list2 {
-    display: flex;
-    align-items: center;
-}
-
 .nav-list ul {
     display: flex;
     justify-content: center;
@@ -69,11 +51,6 @@ header {
     align-items: center;
 }
 
-.nav-list2 ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
 
 .nav-item {
     margin: 0 40px;
