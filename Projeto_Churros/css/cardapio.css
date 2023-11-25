@@ -29,17 +29,10 @@
 }
 /* MENU NAVEGADOR */
 header {
-    background-color: #f3e0c8;
+    background-color: #1A1818;
     height: 100%;
 }
 
-.dark-icone{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  cursor: pointer;
-}
 
 .nav-bar {
     display: flex;
@@ -184,6 +177,7 @@ footer{
     color: #FFD80D;
     text-align: center;
     text-transform: uppercase;
+    padding: 20px;
     background-color: rgb(34, 33, 33);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -196,7 +190,7 @@ footer{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 40px;
+  /*gap: 40px;*/
 }
 
 .product {
@@ -211,7 +205,12 @@ footer{
   text-transform: uppercase;
 }
 
-.product-corpo{
+.product p{
+  width: 240px;
+    text-align: justify;
+}
+
+/*.product-corpo{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,7 +218,7 @@ footer{
   width: 240px;
   text-align: justify;
   padding: 7px;
-}
+}*/
 
 
 
@@ -232,6 +231,7 @@ footer{
 .product-image {
   width: 240px; /* Flex wrap coloca 2 posters por linha, pq a seção tem 600px */
   height: 144px;
+  padding: 5px 20px;
 }
 
 .product-price-container {
@@ -240,6 +240,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10pxs;
 }
 
 .product-price {
