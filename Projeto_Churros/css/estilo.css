@@ -534,6 +534,8 @@ header {
         margin: 0 6px;
         padding: 0.5rem 0;
         font-size: 15px;
+        display: flex;
+        flex-direction: column;
     }
     
     .entrada-dados-cadastro-mobille label{
