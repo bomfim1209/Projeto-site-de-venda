@@ -45,6 +45,31 @@ login.addEventListener("click", () => {
 
     form.classList.remove("dark");
 });
+
+
+
+/////////// Verificação do CEP ///////////
+function buscarEndereco() {
+    var cep = document.getElementById("cep").value;
+    if (cep.length != 8) {
+        alert("CEP inválido");
+        return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://viacep.com.br/ws/" + cep + "/json/", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var endereco = JSON.parse(xhr.responseText);
+            document.getElementById("logradouro").value = endereco.logradouro;
+            document.getElementById("bairro").value = endereco.bairro;
+            //document.getElementById("uf").value = endereco.uf;
+        }
+    }
+    xhr.send();
+}
+
+
 /////////////////////////////////////////////////////////////
 
 
@@ -109,96 +134,3 @@ function validacao_cadastro(){
         return true;   
     }
 }
-
-
-
-
-
-/////////// Verificação do CEP ///////////
-function limpa_formulário_cep() {
-    //Limpa valores do formulário de cep.
-    document.getElementById('Rua/Avenida').value=("");
-    document.getElementById('Bairro').value=("");
-    document.getElementById('Cidade').value=("");
-    document.getElementById('Estado').value=("");
-}
-
-function meu_callback(conteudo) {
-    if (!("erro" in conteudo)) {
-        //Atualiza os campos com os valores.
-        document.getElementById('Rua/Avenida').value=(conteudo.logradouro);
-        document.getElementById('Bairro').value=(conteudo.bairro);
-        document.getElementById('Cidade').value=(conteudo.localidade);
-        document.getElementById('Estado').value=(conteudo.uf);
-    } //end if.
-    else {
-        //CEP não Encontrado.
-        limpa_formulário_cep();
-        alert("CEP não encontrado.");
-    }
-}
-
-function pesquisacep(valor) {
-    //Nova variável "cep" somente com dígitos.
-    var cep = document.getElementById("cep");
-
-    //Verifica se campo cep possui valor informado.
-    if (cep != "") {
-
-        //Expressão regular para validar o CEP.
-        var validacep = /^[0-9]{8}$/;
-
-        //Valida o formato do CEP.
-        if(validacep.test(cep)) {
-
-            //Preenche os campos com "..." enquanto consulta webservice.
-            document.getElementById('Rua/Avenida').value="...";
-            document.getElementById('Bairro').value="...";
-            document.getElementById('Cidade').value="...";
-            document.getElementById('Estado').value="...";
-
-            //Cria um elemento javascript.
-            var script = document.createElement('script');
-
-            //Sincroniza com o callback.
-            script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-            //Insere script no documento e carrega o conteúdo.
-            document.body.appendChild(script);
-
-        } //end if.
-        else {
-            //cep é inválido.
-            limpa_formulário_cep();
-            alert("Formato de CEP inválido.");
-        }
-    } //end if.
-    else {
-        //cep sem valor, limpa formulário.
-        limpa_formulário_cep();
-    }
-};
-/////////////////////////////////////////////////////////////
-
-
-// Validar E-mail
-function validateEmailAddress(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-}
-
-
-// Validação da data
-function validate() {
-    $("#result").text("");
-    var emailaddress = $("#email").val();
-    if (validateEmailAddress(emailaddress)) {
-        $("#result").text(emailaddress + " is valid :)");
-        $("#result").css("color", "green");
-    } else {
-        $("#result").text(emailaddress + " is not correct, please retry:(");
-        $("#result").css("color", "red");
-    }
-    return false;
-}
-$("#validate").bind("click", validate);

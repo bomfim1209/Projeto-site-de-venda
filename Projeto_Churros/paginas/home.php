@@ -52,8 +52,6 @@
             </div>
         </nav>
 
-        
-
         <div class="mobile-menu">
             <ul>
                 <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
