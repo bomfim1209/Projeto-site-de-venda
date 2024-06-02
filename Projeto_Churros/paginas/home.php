@@ -27,33 +27,36 @@
             
             <div class="nav-list">
                 <ul>
+                    <li class="nav-item"><a href="home.php" class="nav-link"><b>HOME</b></a></li>
                     <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                     <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
                     <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
                     <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <div class="dark-icone">
                             <i id="item-lua" class="fa-solid fa-moon"></i>
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
-            </div>
 
-            
-            <div class="mobile-menu-icon">
-                <button onclick="menuShow()">
-                    <img class="icon" src="../imagens/menu_white_36dp.svg">
-                </button>
+                <div>
+                    <div class="mobile-menu-icon">
+                        <button onclick="menuShow()">
+                            <img class="icon" src="../imagens/menu_white_36dp.svg">
+                        </button>
+                    </div>
 
-                <div class="dark-icone">
-                    <i id="item-lua" class="fa-solid fa-moon"></i>
-                </div>
+                    <div class="dark-icone">
+                        <i id="item-lua" class="fa-solid fa-moon"></i>
+                    </div>
+                </div>      
             </div>
         </nav>
 
         <div class="mobile-menu">
             <ul>
+                <li class="nav-item"><a href="home.php" class="nav-link"><b>HOME</b></a></li>
                 <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                 <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                 <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>

@@ -57,12 +57,6 @@ header {
     align-items: center;
 }
 
-
-.nav-list2 {
-    display: flex;
-    align-items: center;
-}
-
 .nav-list ul {
     display: flex;
     justify-content: center;
@@ -70,11 +64,16 @@ header {
     align-items: center;
 }
 
+/*.nav-list2 {
+    display: flex;
+    align-items: center;
+}
+
 .nav-list2 ul {
     display: flex;
     justify-content: center;
     list-style: none;
-}
+}*/
 
 .nav-item {
     margin: 0 40px;
@@ -212,18 +211,6 @@ h1 {
     border-radius: 5px;
     background-color: #000000;
 }
-@media(min-width: 300px) and (max-width: 820px){
-    .sobre_nos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px;
-        max-width: 800px;
-        border-style: solid;
-        border-color: #FFD80D;
-        border-radius: 5px;
-    }
-}
 
 .sobre_nos p {
     padding: 25px;
@@ -240,15 +227,6 @@ h1 {
     margin: 40px auto;
     max-width: 1000px;
     
-}
-@media(min-width: 300px) and (max-width: 820px){
-    .text_colorido {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        padding: 40px;
-    }
 }
 
 .text_colorido p {
@@ -274,25 +252,6 @@ h1 {
     border-style: double;
     border-color: rgb(104, 75, 1);
     border-radius: 15px;
-}
-@media(min-width: 300px) and (max-width: 820px){
-    .button_cardapio button {
-        padding: 30px 40px;
-        background-color: #FFD80D;
-        font-size: 1.5rem;
-        border-width: 10px;
-        border-style: double;
-        border-color: rgb(104, 75, 1);
-        border-radius: 15px;
-    }
-
-    .dark-icone{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 7px;
-        cursor: pointer;
-    }
 }
 
 .button_cardapio button a {
@@ -338,4 +297,41 @@ h2 {
 
 .ifood{
     width: 40px;
+}
+
+@media(min-width: 300px) and (max-width: 820px){
+    .sobre_nos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+        max-width: 800px;
+        border-style: solid;
+        border-color: #FFD80D;
+        border-radius: 5px;
+    }
+
+    .text_colorido {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 40px;
+    }
+
+    .button_cardapio button {
+        padding: 30px 40px;
+        background-color: #FFD80D;
+        font-size: 1.5rem;
+        border-width: 10px;
+        border-style: double;
+        border-color: rgb(104, 75, 1);
+        border-radius: 15px;
+    }
+
+    .minimenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

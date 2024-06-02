@@ -176,15 +176,12 @@ footer{
   align-items: center;
   margin: 2%;
   border: #FF8C00 solid;
-}
-
-.product h3{
-  text-transform: uppercase;
+  width: min-content;
 }
 
 .product p{
   width: 240px;
-    text-align: justify;
+  text-align: justify;
 }
 
 /*.product-corpo{
@@ -202,7 +199,9 @@ footer{
 
 .product-title {
   font-size: 20px;
-  margin-bottom: 6px;
+  margin: 6px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .product-image {
