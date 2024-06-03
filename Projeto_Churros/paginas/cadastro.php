@@ -53,7 +53,7 @@
                     
                     <div class="entrada-dados-cadastro">
                         <label for="cpf"><strong>CPF</strong></label>
-                        <input type="text" name="cpf" id="cpf" placeholder="Ex: 123.456.789-00" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"  required>
+                        <input type="text" name="cpf" id="cpf" onkeypress="mascaraCPF()" maxlength="14" autocomplete="off" placeholder="Ex: 123.456.789-00" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"  required>
                     </div>
                                     
                     <div class="entrada-dados-cadastro">
@@ -103,14 +103,14 @@
         
                     <div  class="entrada-dados-cadastro">
                         <label for="tel_celular"><strong>Telefone Celular</strong></label>
-                        <!--Localizar o erro--><input type="tel" name="tel_celular" id="tel_celular" placeholder="(+55)xx-xxxxxxxxx" pattern="[0-9]{2}-[0-9]{9}" required>
+                        <!--Localizar o erro--><input type="tel" name="tel_celular" id="tel_celular" onkeypress="mascaraTelefone()" maxlength="14" placeholder="(xx)xxxxx-xxxx" pattern="[0-9]{2}-[0-9]{9}" required>
                     </div>
         
                     <!--Endereço CEP-->
                     <div class="entrada-dados-cadastro">
                         <label for="cep"><strong>CEP</strong></label>
-                        <input type="text" name="cep" id="cep" placeholder="Ex: 21900-500" pattern="\d{5}-?\d{3}"  required>
-                        <button type="button" onclick="buscarEndereco()">Buscar</button>
+                        <input type="text" onblur="buscarEndereco()" name="cep" id="cep" placeholder="Ex: 21900-500" pattern="\d{5}-?\d{3}"  required>
+                        <!--<button type="button" onclick="buscarEndereco()">Buscar</button>-->
                     </div>
                     
                     <div class="entrada-dados-cadastro">
@@ -142,8 +142,6 @@
             </div>
         </div>
     </main>
-
-    
 
     <script src="../javascript/comandos.js"></script>
 </body>

@@ -1,3 +1,44 @@
+///////// Mascaras dos Inputs /////////
+
+function mascaraCPF(){
+    const cpfOrganizar = document.getElementById('cpf');
+
+    cpfOrganizar.addEventListener('input', () => {
+        let dado = cpfOrganizar.value.length;
+
+        if(dado === 3 || dado === 7){
+            cpfOrganizar.value += '.';
+        }else if(dado === 11){
+            cpfOrganizar.value += '-';
+        }
+    })
+};
+
+
+function mascaraTelefone(){
+    const teleOrganizar = document.getElementById('tel_celular');
+
+    teleOrganizar.addEventListener('input', () => {
+        var tel = teleOrganizar.value.replace(/\D/g,"").substring(0,11); //Romove tudo o que não for numero do campo.
+        var telef = tel.split(""); //Separa a string em caracters individuais.
+        var telefone = "";
+
+        if(telef.length > 0){
+            telefone += `(${telef.slice(0,2).join("")})`;
+        }
+        if(telef.length > 2){
+            telefone += `${telef.slice(2,7).join("")}`;
+        }
+        if(telef.length > 7){
+            telefone += `-${telef.slice(7,11).join("")}`;
+        }
+
+        teleOrganizar.value = telefone;
+    })
+};
+
+/////////////////////////////////////////////////////////////
+
 ///////// Validação tela de login /////////
 function validacao(){
     var email = document.getElementById("email-validacao");
@@ -11,7 +52,7 @@ function validacao(){
         alert("Senha não informada")
         senha.focus();
     }
-}
+};
 
 
 ///////// Menu responsivo /////////
@@ -24,7 +65,7 @@ function menuShow() {
         menuMobile.classList.add('open');
         document.querySelector('.icon').src = "../imagens/close_white_36dp.svg";
     }
-}
+};
 
 ///////// Modo Dark /////////
 const login = document.getElementById("item-lua");
