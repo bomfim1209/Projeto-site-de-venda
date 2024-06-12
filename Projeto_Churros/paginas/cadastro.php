@@ -18,7 +18,7 @@
     <header>
         <nav class="nav-bar-simples">
             <div class="logo">
-                <a href="home.php">
+                <a href="index.php">
                     <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
                 </a>
             </div>
@@ -32,7 +32,7 @@
             <!-- LADO ESQUERDO -->
             <div class="texto-login">
                 <div class="botoes-topo-tela-cadastro">
-                    <a id="botao-voltar" href="home.php"><i class="fa-solid fa-left-long"></i></a>
+                    <a id="botao-voltar" href="index.php"><i class="fa-solid fa-left-long"></i></a>
                     <i id="item-lua" class="fa-solid fa-moon"></i>
                 </div>
 
@@ -78,29 +78,6 @@
                         <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
     
-                    <div class="caixaGenero">
-                        <h6>Sexo</h6>
-                        <div class="boxInputs">
-                            <div class="generoInput">
-                                <input type="radio" id="masculino" name="genero">
-                                <label for="masculino">Masculino</label>
-                            </div>
-                            <div class="generoInput">
-                                <input type="radio" id="feminino" name="genero">
-                                <label for="feminino">Feminino</label>
-                            </div>
-                            <div class="generoInput">
-                                <input type="radio" id="outro" name="genero">
-                                <label for="outro">Outro</label>
-                            </div>
-    
-                            <div class="generoInput">
-                                <input type="radio" id="nao-responder" name="genero">
-                                <label for="outro">Prefiro não responder</label>
-                            </div>
-                        </div>
-                    </div>
-        
                     <div  class="entrada-dados-cadastro">
                         <label for="tel_celular"><strong>Telefone Celular</strong></label>
                         <!--Localizar o erro--><input type="tel" name="tel_celular" id="tel_celular" onkeypress="mascaraTelefone()" maxlength="14" placeholder="(xx)xxxxx-xxxx" pattern="[0-9]{2}-[0-9]{9}" required>
@@ -133,10 +110,35 @@
                         <input type="text" name="complemento" id="complemento" placeholder="casa" required>
                     </div>
                     
-                    
+                    <div class="caixaGenero">
+                        <h6>Sexo</h6>
+                        <div class="boxInputs">
+                            <div class="generoInput">
+                                <input type="radio" id="masculino" name="genero">
+                                <label for="masculino">Masculino</label>
+                            </div>
+                            <div class="generoInput">
+                                <input type="radio" id="feminino" name="genero">
+                                <label for="feminino">Feminino</label>
+                            </div>
+                            <div class="generoInput">
+                                <input type="radio" id="outro" name="genero">
+                                <label for="outro">Outro</label>
+                            </div>
+    
+                            <div class="generoInput">
+                                <input type="radio" id="nao-responder" name="genero">
+                                <label for="outro">Prefiro não responder</label>
+                            </div>
+                        </div>
+                    </div>
         
                     <div class="botao-cadastro">
                         <button class="botao-primario" type="submit" onclick="validacao_cadastro()">Cadastrar</button>
+                    </div>
+
+                    <div class="botao-cadastro">
+                        <button class="botao-secundario" type="reset">Limpar</button>
                     </div>
                 </form>
             </div>

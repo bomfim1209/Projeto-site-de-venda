@@ -20,16 +20,16 @@
         <nav class="nav-bar">
 
             <div class="logo">
-                <a href="home.php">
+                <a href="index.php">
                     <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
                 </a>
             </div>
             
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="home.php" class="nav-link"><b>HOME</b></a></li>
-                    <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
-                    <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
+                    <li class="nav-item"><a href="index.php #contato" class="nav-link"><b>CONTATO</b></a></li>
+                    <li class="nav-item"><a href="index.php #sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
                     <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
                     <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
@@ -56,9 +56,9 @@
 
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="home.php" class="nav-link"><b>HOME</b></a></li>
-                <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
-                <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
+                <li class="nav-item"><a href="index.php #contato" class="nav-link"><b>CONTATO</b></a></li>
+                <li class="nav-item"><a href="index.php #sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                 <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
                 <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
                 <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>

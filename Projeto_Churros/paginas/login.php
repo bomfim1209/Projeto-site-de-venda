@@ -18,7 +18,7 @@
     <header>
         <nav class="nav-bar-simples">
             <div class="logo">
-                <a href="home.php">
+                <a href="index.php">
                     <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
                 </a>
             </div>
@@ -29,7 +29,7 @@
         <div id="container" class="container-login">
 
             <div class="botoes-topo-tela-login">
-                <a id="botao-voltar" href="home.php"><i class="fa-solid fa-left-long"></i></a>
+                <a id="botao-voltar" href="index.php"><i class="fa-solid fa-left-long"></i></a>
                 <i id="item-lua" class="fa-solid fa-moon"></i>
             </div>
             

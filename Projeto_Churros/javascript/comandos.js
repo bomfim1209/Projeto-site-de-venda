@@ -1,3 +1,47 @@
+////////////////// COMPONENTES COMUNS //////////////////
+////// Teste de DropDown ///////
+
+function toggleMenu(){
+    let subMenu = document.getElementById("subMenu");
+
+    subMenu.classList.toggle("open-menu");
+}
+
+///////// Menu responsivo /////////
+function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open')) {
+        menuMobile.classList.remove('open');
+        document.querySelector('.icon').src = "../imagens/menu_white_36dp.svg";
+    } else {
+        menuMobile.classList.add('open');
+        document.querySelector('.icon').src = "../imagens/close_white_36dp.svg";
+    }
+};
+
+///////// Modo Dark /////////
+const login = document.getElementById("item-lua");
+
+login.addEventListener("click", () => {
+    const form = document.getElementById("container");
+
+    if(login.classList.contains("fa-moon")){
+        login.classList.remove("fa-moon");
+        login.classList.add("fa-sun");
+
+        form.classList.add("dark");
+        return;
+    }
+
+    login.classList.remove('fa-sun');
+    login.classList.add('fa-moon');
+
+    form.classList.remove("dark");
+});
+/////////////////////////////////////////////////////////////
+
+
+////////////////// TELA DE CADASTRO //////////////////
 ///////// Mascaras dos Inputs /////////
 
 function mascaraCPF(){
@@ -37,58 +81,6 @@ function mascaraTelefone(){
     })
 };
 
-/////////////////////////////////////////////////////////////
-
-///////// Validação tela de login /////////
-function validacao(){
-    var email = document.getElementById("email-validacao");
-    if(email.value == !email){
-        alert("Usuario não informado");
-        email.focus();
-    }
-
-    var senha = document.getElementById("senha-validacao");
-    if(senha.value == !senha){
-        alert("Senha não informada")
-        senha.focus();
-    }
-};
-
-
-///////// Menu responsivo /////////
-function menuShow() {
-    let menuMobile = document.querySelector('.mobile-menu');
-    if (menuMobile.classList.contains('open')) {
-        menuMobile.classList.remove('open');
-        document.querySelector('.icon').src = "../imagens/menu_white_36dp.svg";
-    } else {
-        menuMobile.classList.add('open');
-        document.querySelector('.icon').src = "../imagens/close_white_36dp.svg";
-    }
-};
-
-///////// Modo Dark /////////
-const login = document.getElementById("item-lua");
-
-login.addEventListener("click", () => {
-    const form = document.getElementById("container");
-
-    if(login.classList.contains("fa-moon")){
-        login.classList.remove("fa-moon");
-        login.classList.add("fa-sun");
-
-        form.classList.add("dark");
-        return;
-    }
-
-    login.classList.remove('fa-sun');
-    login.classList.add('fa-moon');
-
-    form.classList.remove("dark");
-});
-
-
-
 /////////// Verificação do CEP ///////////
 function buscarEndereco() {
     var cep = document.getElementById("cep").value;
@@ -111,10 +103,6 @@ function buscarEndereco() {
 }
 
 
-/////////////////////////////////////////////////////////////
-
-
-/////////// TELA DE CADASTRO ///////////
 function validacao_cadastro(){
     
     ////////// VALIDAR SENHA //////////
@@ -175,3 +163,22 @@ function validacao_cadastro(){
         return true;   
     }
 }
+/////////////////////////////////////////////////////////////
+
+
+////////////////// TELA DE LOGIN //////////////////
+///////// Validação tela de login /////////
+function validacao(){
+    var email = document.getElementById("email-validacao");
+    if(email.value == !email){
+        alert("Usuario não informado");
+        email.focus();
+    }
+
+    var senha = document.getElementById("senha-validacao");
+    if(senha.value == !senha){
+        alert("Senha não informada")
+        senha.focus();
+    }
+};
+/////////////////////////////////////////////////////////////

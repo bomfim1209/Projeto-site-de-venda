@@ -7,7 +7,7 @@
     <title>Paixão churros | Delivery</title>
     <link rel="shorcut icon" href="../imagens/logo-black.jpeg">
 
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/modo-dark.css">
     <link rel="stylesheet" href="../css/menu-mobile.css">
 
@@ -20,14 +20,14 @@
         <nav class="nav-bar">
 
             <div class="logo">
-                <a href="home.php">
+                <a href="index.php">
                     <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
                 </a>
             </div>
-            
+
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="home.php" class="nav-link"><b>HOME</b></a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
                     <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                     <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
@@ -50,20 +50,48 @@
                     <div class="dark-icone">
                         <i id="item-lua" class="fa-solid fa-moon"></i>
                     </div>
-                </div>      
+                </div>
+
+                <div>
+                    <img src="../imagens/profile.png" class="user-pic" onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                            <img src="../imagens/profile.png">
+                            <h2>Fulano Beltrano</h2>
+                        </div>
+
+                        <hr>
+
+                        <a href="#" class="sub-menu-link">
+                            <img src="../imagens/help.png">
+                            <p>Meus pedidos</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="#" class="sub-menu-link">
+                            <img src="../imagens/logout.png">
+                            <p>Sair</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        
+
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
+                    <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
+                    <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
+                    <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
+                    <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
+                </ul>
             </div>
         </nav>
 
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="home.php" class="nav-link"><b>HOME</b></a></li>
-                <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
-                <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
-                <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
-                <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
-                <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
-            </ul>
-        </div>
     </header>
 
     <main class="body-home">
