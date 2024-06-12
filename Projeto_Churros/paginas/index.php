@@ -57,26 +57,37 @@
                     <div class="sub-menu-wrap" id="subMenu">
                         <div class="sub-menu">
                             <div class="user-info">
-                            <img src="../imagens/profile.png">
-                            <h2>Fulano Beltrano</h2>
+                                <img src="../imagens/profile.png">
+                                <h2>Fulano Beltrano</h2>
+                            </div>
+
+                            <div class="usuario-admin">
+                                <a href="lista_cliente.php" class="sub-menu-link">Clientes</a>
+                                <a href="lista_produto.php" class="sub-menu-link">Produtos</a>
+                            </div>
+
+                            <hr>
+
+                            <a href="#" class="sub-menu-link">
+                                <img src="">
+                                <p>Perfil</p>
+                                <span>></span>
+                            </a>
+
+                            <a href="#" class="sub-menu-link">
+                                <img src="../imagens/help.png">
+                                <p>Meus pedidos</p>
+                                <span>></span>
+                            </a>
+
+                            <a href="#" class="sub-menu-link">
+                                <img src="../imagens/logout.png">
+                                <p>Sair</p>
+                                <span>></span>
+                            </a>
                         </div>
-
-                        <hr>
-
-                        <a href="#" class="sub-menu-link">
-                            <img src="../imagens/help.png">
-                            <p>Meus pedidos</p>
-                            <span>></span>
-                        </a>
-
-                        <a href="#" class="sub-menu-link">
-                            <img src="../imagens/logout.png">
-                            <p>Sair</p>
-                            <span>></span>
-                        </a>
                     </div>
                 </div>
-
             </div>
         
 
@@ -183,7 +194,7 @@
             </div>
     
             <div class="button_cardapio">
-                <button><a href="#"> CONHECER CARDÁPIO </a></button>
+                <button><a href="cardapio.php"> CONHECER CARDÁPIO </a></button>
             </div>
             
             <div>

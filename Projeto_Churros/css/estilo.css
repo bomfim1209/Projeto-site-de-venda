@@ -538,3 +538,13 @@ header {
         padding: 10px;
     }
 }
+
+
+/* /////////////////// TELA LISTA DE CLIENES /////////////////// */
+
+.body-cliente{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, gold, rgb(167, 81, 19));
+    width: 100%;
+    
+}
