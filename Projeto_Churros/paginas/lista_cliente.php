@@ -7,6 +7,7 @@
 
     <link rel="shorcut icon" href="../imagens/logo-black.jpeg">
 
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="../css/modo-dark.css">
     <link rel="stylesheet" href="../css/menu-mobile.css">
@@ -16,7 +17,7 @@
 </head>
 
 <body>
-    <header id="topo">
+<header id="topo">
         <nav class="nav-bar">
 
             <div class="logo">
@@ -28,8 +29,8 @@
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
-                    <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
-                    <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
+                    <li class="nav-item"><a href="index.php #contato" class="nav-link"><b>CONTATO</b></a></li>
+                    <li class="nav-item"><a href="index.php #sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
                     <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
                     <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
@@ -45,10 +46,6 @@
                         <button onclick="menuShow()">
                             <img class="icon" src="../imagens/menu_white_36dp.svg">
                         </button>
-                    </div>
-
-                    <div class="dark-icone">
-                        <i id="item-lua" class="fa-solid fa-moon"></i>
                     </div>
                 </div>
 
@@ -105,9 +102,21 @@
 
     </header>
 
-    <main class="body-cliente">
-        sjfdsbfdbfss
-        <div>
+    <main class="body-home">
+
+        <div class="botao-pdf">
+            <button class="pdf" type="submit" onclick="gerarPDF()">Gerar PDF <i id="icone-pdf" class="fa-regular fa-file-pdf"></i></button>
+        </div>
+        
+        
+
+        
+    </main>
+
+    <footer></footer>
+
+<!--ARRUMAR O PHP E JOGAR ANTES DO FOOTER-->
+    <div>
             <?php
                 $sql = "SELECT * FROM cliente";
                 $res = $conn->query($sql);
@@ -145,7 +154,7 @@
 
             ?>
         </div>
-    </main>
 
+    <script type="text/javascript" src="../javascript/comandos.js"></script>
 </body>
 </html>

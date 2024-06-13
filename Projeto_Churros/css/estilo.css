@@ -79,6 +79,12 @@ header {
     cursor: pointer;
 }
 
+#item-lua-nav-bar{
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffff;
+}
+
 .botao-login{
     margin-top: 10%;
     width: 100%;
@@ -546,5 +552,22 @@ header {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: linear-gradient(-45deg, gold, rgb(167, 81, 19));
     width: 100%;
-    
+}
+
+.pdf{
+    height: 20px;
+    width: 6rem;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 3px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+#icone-pdf{
+    font-size: 30px;
+    color: blue;
 }

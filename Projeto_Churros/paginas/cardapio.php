@@ -16,7 +16,7 @@
     
 </head>
 <body>
-    <header id="topo">
+    <header>
         <nav class="nav-bar">
 
             <div class="logo">
