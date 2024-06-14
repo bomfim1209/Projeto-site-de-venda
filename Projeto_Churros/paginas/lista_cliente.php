@@ -16,7 +16,7 @@
     
 </head>
 
-<body>
+<body class="body-cliente">
 <header id="topo">
         <nav class="nav-bar">
 
@@ -103,14 +103,61 @@
     </header>
 
     <main class="body-home">
+        <div class="tabela">
 
-        <div class="botao-pdf">
-            <button class="pdf" type="submit" onclick="gerarPDF()">Gerar PDF <i id="icone-pdf" class="fa-regular fa-file-pdf"></i></button>
+            <div class="pdf">
+                <button class="botao-pdf" type="submit" onclick="gerarPDF()"> 
+                    <div>
+                        <i id="icone-pdf" class="fa-regular fa-file-pdf"></i>
+                    </div>    
+                </button>
+            </div>
+
+            <table class="tabela-4x4">
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                        <th>Header 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cell 1</td>
+                        <td>Cell 2</td>
+                        <td>Cell 3</td>
+                        <td>Cell 4</td>
+                    </tr>
+                    <tr>
+                        <td>Cell 5</td>
+                        <td>Cell 6</td>
+                        <td>Cell 7</td>
+                        <td>Cell 8</td>
+                    </tr>
+                    <tr>
+                        <td>Cell 9</td>
+                        <td>Cell 10</td>
+                        <td>Cell 11</td>
+                        <td>Cell 12</td>
+                    </tr>
+                    <tr>
+                        <td>Cell 13</td>
+                        <td>Cell 14</td>
+                        <td>Cell 15</td>
+                        <td>Cell 16</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pdf">
+                <button class="botao-pdf" type="submit" onclick="gerarPDF()"> 
+                    <div>
+                        <i id="icone-pdf" class="fa-solid fa-file-pdf"></i>
+                    </div>    
+                </button>
+            </div>
         </div>
-        
-        
-
-        
     </main>
 
     <footer></footer>

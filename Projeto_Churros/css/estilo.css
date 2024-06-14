@@ -548,26 +548,57 @@ header {
 
 /* /////////////////// TELA LISTA DE CLIENES /////////////////// */
 
-.body-cliente{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: linear-gradient(-45deg, gold, rgb(167, 81, 19));
-    width: 100%;
+.pdf{
+    position: absolute;
+    right: 10px;
 }
 
-.pdf{
-    height: 20px;
-    width: 6rem;
-    font-size: 18px;
-    padding: 12px;
-    border-radius: 3px;
+.botao-pdf{
+    padding: 5px;
+    border-radius: 7px;
     border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
+    margin: 5px 0;
+    cursor: pointer;
 }
 
 #icone-pdf{
     font-size: 30px;
-    color: blue;
+    color: red;
+}
+
+.body-cliente{
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.tabela{
+    border: 5px solid purple;
+    padding: 50px;
+}
+
+.tabela-4x4 {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-4x4 th, .tabela-4x4 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabela-4x4 th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tabela-4x4 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabela-4x4 tr:hover {
+    background-color: #ddd;
 }
