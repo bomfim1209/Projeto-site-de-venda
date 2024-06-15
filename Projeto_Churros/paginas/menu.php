@@ -3,8 +3,9 @@ session_start();
 
 // Simulando o tipo de usuário
 // Valores possíveis: 'guest' (visitante), 'user' (usuário comum), 'admin' (administrador)
+// Em um cenário real, essa informação viria do banco de dados após o login do usuário.
 if (!isset($_SESSION['user_type'])) {
-    $_SESSION['user_type'] = 'admin'; 
+    $_SESSION['user_type'] = 'admin'; // Padrão é 'guest'   Usuario é 'user'    Administrador é 'admin'
 }
 
 // Variável para armazenar o tipo de usuário
@@ -12,9 +13,23 @@ $user_type = $_SESSION['user_type'];
 ?>
 
 
+
+<?php if ($user_type == 'guest'): ?>
+    <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
+    <?php elseif($user_type == 'user'): ?>
+        <li class="login-button"><a href="logout.php"><b>PERFIL</b></a></li>
+        <li class="login-button"><a href="logout.php"><b>LOGOUT</b></a></li>
+        <?php if ($user_type == 'admin'): ?>
+            <li class="nav-item"><a href="lista_cliente.php" class="nav-link"><b>CLIENTES</b></a></li>
+            <li class="nav-item"><a href="lista_produto.php" class="nav-link"><b>PRODUTOS</b></a></li>
+    <?php endif; ?>
+<?php endif; ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +45,7 @@ $user_type = $_SESSION['user_type'];
 </head>
 
 <body>
-<header id="topo">
+    <header id="topo">
         <nav class="nav-bar">
 
             <div class="logo">
@@ -49,6 +64,7 @@ $user_type = $_SESSION['user_type'];
                     <?php if ($user_type == 'guest'): ?>
                         <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
                         <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
+
                     <?php else: ?>
                         <li class="login-button"><a href="logout.php"><b>LOGOUT</b></a></li>
                     <?php endif; ?>
@@ -75,51 +91,37 @@ $user_type = $_SESSION['user_type'];
                     <img src="../imagens/profile.png" class="user-pic" onclick="toggleMenu()">
                     <div class="sub-menu-wrap" id="subMenu">
                         <div class="sub-menu">
-
-                            <div class="user-info">
-                                <img src="../imagens/profile.png">
-                                <h2>Fulano Beltrano</h2>
-                            </div>
-
-                            <hr>
-
                             <?php if ($user_type == 'admin'): ?>
                                 <div class="usuario-admin">
-                                    <a href="lista_cliente.php" class="sub-menu-link">
-                                        <img src="">
-                                        <p>Lista Clientes</p>
-                                        <span>></span>
-                                    </a>
-
-                                    <a href="lista_produto.php" class="sub-menu-link">
-                                        <img src="">
-                                        <p>Lista Produtos</p>
-                                        <span>></span>
-                                    </a>
+                                    <a href="lista_cliente.php" class="sub-menu-link">Clientes</a>
+                                    <a href="lista_produto.php" class="sub-menu-link">Produtos</a>
                                 </div>
                             <?php endif; ?>
 
                             <hr>
 
-                            <div>
-                                <a href="#" class="sub-menu-link">
-                                    <img src="">
-                                    <p>Perfil</p>
-                                    <span>></span>
-                                </a>
+                            <a href="#" class="sub-menu-link">
+                                <img src="">
+                                <p>Perfil</p>
+                                <span>></span>
+                            </a>
 
-                                <a href="#" class="sub-menu-link">
-                                    <img src="../imagens/help.png">
-                                    <p>Meus pedidos</p>
-                                    <span>></span>
-                                </a>
+                            <a href="#" class="sub-menu-link">
+                                <img src="../imagens/help.png">
+                                <p>Meus pedidos</p>
+                                <span>></span>
+                            </a>
 
-                                <a href="#" class="sub-menu-link">
-                                    <img src="../imagens/logout.png">
-                                    <p>Sair</p>
-                                    <span>></span>
-                                </a>
-                            </div>
+                            <a href="#" class="sub-menu-link">
+                                <img src="../imagens/logout.png">
+                                <p>Sair</p>
+                                <span>></span>
+                            </a>
+
+
+
+                                <a href="login.php">Fazer Login</a>
+                                <a href="cadastro.php">Realizar Cadastro</a>
 
                         </div>
                     </div>
@@ -143,22 +145,26 @@ $user_type = $_SESSION['user_type'];
 
     <main class="body-home">
         <div id="container" class="container-home">
-        <marquee>
-                <a href="cardapio.php"><img class="carrossel" src="../imagens/12-churros-especiais.jpeg" alt="img1">
-                <img class="carrossel" src="../imagens/25 CHURRITOS ESPANHOL.avif" alt="img2">
-                <img class="carrossel" src="../imagens/chrurros-gourmet.jpeg" alt="img3">
-                <img class="carrossel" src="../imagens/churrocopo.jpeg" alt="img4"></a>
-        </marquee>
+
+            <div class="portada">
+                <a href="cardapio.php">
+                    <marquee>
+                        
+                    </marquee>
+                </a>
+            </div>
     
             <h1>PROMOÇÕES</h1>
     
            <section class="minimenu">
                 <div class="itens-menu">
                     <div>
-                    <a href="cardapio.php"><img class="imagem-produtos" src="../imagens/churrocopo.jpeg" alt="Copo com churros"></a>
-                        <div class="info1">
+                        <img class="imagem-produtos" src="../imagens/churrocopo.jpeg" alt="Copo com churros">
+                        <div class="info">
                             <h3>CHURROS DA FELICIDADE</h3>
-                            <p>Nosso queridinho é viciante, contém: 8 churros, acompanha copinho de doce de leite e confeitos de sua escolha<p>
+                            <p>Nosso queridinho é viciante, você precisa provar essa delícia,
+                            churro espanhol crocantes e sequinhos passados no açúcar e canela,
+                            8 churros, acompanha copinho de doce de leite e confeitos de sua escolha<p>
                             <div class="promo">
                                 <p>R$25,00</p>
                                 <span>R$30,00</span>
@@ -169,8 +175,8 @@ $user_type = $_SESSION['user_type'];
     
                 <div class="itens-menu">
                     <div>
-                       <a href="cardapio.php"><img class="imagem-produtos" src="../imagens/recheios.jpeg" alt="5 churros recheados"></a>
-                        <div class="info2">
+                        <img class="imagem-produtos" src="../imagens/recheios.jpeg" alt="5 churros recheados">
+                        <div class="info">
                             <h3>CHURROS RECHEADOS</h3>
                             <p> 5 Churros tradicionais passados em açúcar e canela, recheados com doce de leite,
                                 brigadeiro ou misto.<p>
@@ -184,8 +190,8 @@ $user_type = $_SESSION['user_type'];
     
                 <div class="itens-menu">
                     <div>
-                    <a href="cardapio.php"><img class="imagem-produtos" src="../imagens/churrodocedeleite.jpeg" alt="Churro de doce de leite"></a>
-                        <div class="info3">
+                        <img class="imagem-produtos" src="../imagens/churrodocedeleite.jpeg" alt="Churro de doce de leite">
+                        <div class="info">
                             <h3>CHURRO TRADICIONAL DOCE DE LEITE</h3>
                             <p>Churro individual, recheado com nosso gostoso doce de leite,
                             passado no açúcar e canela.<p>
@@ -199,10 +205,12 @@ $user_type = $_SESSION['user_type'];
     
                 <div class="itens-menu">
                     <div>
-                    <a href="cardapio.php"><img class="imagem-produtos" src="../imagens/Chur-vete.jpeg" alt="Churros com sorvete"></a>
-                        <div class="info4">
+                        <img class="imagem-produtos" src="../imagens/Chur-vete.jpeg" alt="Churros com sorvete">
+                        <div class="info">
                             <h3>CHUR-VETE</h3>
-                            <p>Churro espanhol, brigadeiro caseiro, 100g de sorvete, nutella e amendoim!</p>
+                            <p>Uma criação perfeita para surprender você que gosta de uma explosão
+                                de sabores! Ele têm tudo que você gosta: churro espanhol,
+                                brigadeiro caseiro, 100g de sorvete, nutella e amendoim!</p>
                             <div class="promo">
                                 <p>R$24,00</p>
                                 <span>R$28,00</span>
@@ -222,6 +230,11 @@ $user_type = $_SESSION['user_type'];
                 </p>
             </div>
     
+            <div class="text_colorido">
+            <p> Então, não espere mais! Faça seu pedido e mergulhe na deliciosa experiência. 
+                Mal podemos esperar para te surpreender a cada mordida!</p>
+            </div>
+    
             <div class="button_cardapio">
                 <button><a href="cardapio.php"> CONHECER CARDÁPIO </a></button>
             </div>
@@ -232,7 +245,6 @@ $user_type = $_SESSION['user_type'];
                 </a>
             </div>
     
-            <script type="text/javascript" src="../javascript/comandos.js"></script>
         </div>
         
     </main>
