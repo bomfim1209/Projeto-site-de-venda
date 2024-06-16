@@ -1,16 +1,13 @@
 <?php
 session_start();
 
-// Simulando o tipo de usuário
-// Valores possíveis: 'guest' (visitante), 'user' (usuário comum), 'admin' (administrador)
-if (!isset($_SESSION['user_type'])) {
-    $_SESSION['user_type'] = 'admin'; 
-}
-
 // Variável para armazenar o tipo de usuário
-$user_type = $_SESSION['user_type'];
-?>
+$user_type = isset($_SESSION['user_type']) ? $_SESSION['user_type'] : 'guest';
 
+@$nome = $_SESSION['nome'];
+
+include 'conexao.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,11 +23,11 @@ $user_type = $_SESSION['user_type'];
     <link rel="stylesheet" href="../css/menu-mobile.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
 </head>
 
 <body>
-<header id="topo">
+    <header id="topo">
         <nav class="nav-bar">
 
             <div class="logo">
@@ -41,7 +38,6 @@ $user_type = $_SESSION['user_type'];
 
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
                     <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                     <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
@@ -78,28 +74,28 @@ $user_type = $_SESSION['user_type'];
 
                             <div class="user-info">
                                 <img src="../imagens/profile.png">
-                                <h2>Fulano Beltrano</h2>
+                                <h2><?php echo $nome?></h2>
                             </div>
 
                             <hr>
 
                             <?php if ($user_type == 'admin'): ?>
-                                <div class="usuario-admin">
-                                    <a href="lista_cliente.php" class="sub-menu-link">
-                                        <img src="">
-                                        <p>Lista Clientes</p>
-                                        <span>></span>
-                                    </a>
+                            <div class="usuario-admin">
+                                <a href="lista_cliente.php" class="sub-menu-link">
+                                    <img src="">
+                                    <p>Lista Clientes</p>
+                                    <span>></span>
+                                </a>
 
-                                    <a href="lista_produto.php" class="sub-menu-link">
-                                        <img src="">
-                                        <p>Lista Produtos</p>
-                                        <span>></span>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
+                                <a href="lista_produto.php" class="sub-menu-link">
+                                    <img src="">
+                                    <p>Lista Produtos</p>
+                                    <span>></span>
+                                </a>
 
-                            <hr>
+                                <hr>
+                            </div>
+                        <?php endif; ?>
 
                             <div>
                                 <a href="#" class="sub-menu-link">
@@ -114,7 +110,7 @@ $user_type = $_SESSION['user_type'];
                                     <span>></span>
                                 </a>
 
-                                <a href="#" class="sub-menu-link">
+                                <a href="logout.php" class="sub-menu-link">
                                     <img src="../imagens/logout.png">
                                     <p>Sair</p>
                                     <span>></span>
@@ -129,7 +125,6 @@ $user_type = $_SESSION['user_type'];
 
             <div class="mobile-menu">
                 <ul>
-                    <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
                     <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
                     <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
@@ -143,12 +138,43 @@ $user_type = $_SESSION['user_type'];
 
     <main class="body-home">
         <div id="container" class="container-home">
-        <marquee>
-                <a href="cardapio.php"><img class="carrossel" src="../imagens/12-churros-especiais.jpeg" alt="img1">
-                <img class="carrossel" src="../imagens/25 CHURRITOS ESPANHOL.avif" alt="img2">
-                <img class="carrossel" src="../imagens/chrurros-gourmet.jpeg" alt="img3">
-                <img class="carrossel" src="../imagens/churrocopo.jpeg" alt="img4"></a>
-        </marquee>
+            <div class="slider">
+
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+
+                    <div class="slide first">
+                        <img src="../imagens/chrurros-gourmet.jpeg" alt="imagem 1">
+                    </div>
+                    <div class="slide">
+                        <img src="../imagens/25 CHURRITOS ESPANHOL.avif" alt="imagem 2">
+                    </div>
+                    <div class="slide">
+                        <img src="../imagens/Chur-vete.jpeg" alt="imagem 3">
+                    </div>
+                    <div class="slide">
+                        <img src="../imagens/card_5chu.jpeg" alt="imagem 4">
+                    </div>
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+                    <script src="../javascript/script.js"></script>
+                </div>
+            </div>
     
             <h1>PROMOÇÕES</h1>
     

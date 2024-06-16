@@ -302,7 +302,7 @@ header {
 .texto-login{
     width: 30%;
     text-shadow: 1px 6px 13px #00000054;
-    background: linear-gradient(-45deg, rgb(17, 10, 213), rgb(201, 10, 10));
+    background: linear-gradient(-45deg, rgb(255 191 0), rgb(201, 10, 10));
     padding: 15px;
 }
 

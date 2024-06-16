@@ -1,3 +1,14 @@
+<?php
+  session_start();
+
+  // Variável para armazenar o tipo de usuário
+  $user_type = isset($_SESSION['user_type']) ? $_SESSION['user_type'] : 'guest';
+
+  @$nome = $_SESSION['nome'];
+
+  include 'conexao.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +27,7 @@
     
 </head>
 <body>
-    <header>
+<header id="topo">
         <nav class="nav-bar">
 
             <div class="logo">
@@ -24,15 +35,19 @@
                     <img class="imagem-logo" src="../imagens/logo-black.jpeg" alt="logo da loja" width="130px">
                 </a>
             </div>
-            
+
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
                     <li class="nav-item"><a href="index.php #contato" class="nav-link"><b>CONTATO</b></a></li>
                     <li class="nav-item"><a href="index.php #sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
                     <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
-                    <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
-                    <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
+
+                    <?php if ($user_type == 'guest'): ?>
+                        <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
+                        <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
+                    <?php else: ?>
+                        <li class="login-button"><a href="logout.php"><b>LOGOUT</b></a></li>
+                    <?php endif; ?>
                     <!--<li class="nav-item">
                         <div class="dark-icone">
                             <i id="item-lua" class="fa-solid fa-moon"></i>
@@ -50,20 +65,75 @@
                     <div class="dark-icone">
                         <i id="item-lua" class="fa-solid fa-moon"></i>
                     </div>
-                </div>      
+                </div>
+
+                <div>
+                    <img src="../imagens/profile.png" class="user-pic" onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+
+                            <div class="user-info">
+                                <img src="../imagens/profile.png">
+                                <h2><?php echo $nome?></h2>
+                            </div>
+
+                            <hr>
+
+                            <?php if ($user_type == 'admin'): ?>
+                            <div class="usuario-admin">
+                                <a href="lista_cliente.php" class="sub-menu-link">
+                                    <img src="">
+                                    <p>Lista Clientes</p>
+                                    <span>></span>
+                                </a>
+
+                                <a href="lista_produto.php" class="sub-menu-link">
+                                    <img src="">
+                                    <p>Lista Produtos</p>
+                                    <span>></span>
+                                </a>
+
+                                <hr>
+                            </div>
+                        <?php endif; ?>
+
+                            <div>
+                                <a href="#" class="sub-menu-link">
+                                    <img src="">
+                                    <p>Perfil</p>
+                                    <span>></span>
+                                </a>
+
+                                <a href="#" class="sub-menu-link">
+                                    <img src="../imagens/help.png">
+                                    <p>Meus pedidos</p>
+                                    <span>></span>
+                                </a>
+
+                                <a href="logout.php" class="sub-menu-link">
+                                    <img src="../imagens/logout.png">
+                                    <p>Sair</p>
+                                    <span>></span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="#contato" class="nav-link"><b>CONTATO</b></a></li>
+                    <li class="nav-item"><a href="#sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
+                    <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
+                    <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
+                    <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
+                </ul>
             </div>
         </nav>
 
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="index.php" class="nav-link"><b>HOME</b></a></li>
-                <li class="nav-item"><a href="index.php #contato" class="nav-link"><b>CONTATO</b></a></li>
-                <li class="nav-item"><a href="index.php #sobre-nos" class="nav-link"><b>SOBRE NÓS</b></a></li>
-                <li class="nav-item"><a href="cardapio.php" class="nav-link"><b>MENU</b></a></li>
-                <li class="nav-item"><a href="cadastro.php" class="nav-link"><b>CADASTRO</b></a></li>
-                <li class="login-button"><a href="login.php"><b>LOGIN</b></a></li>
-            </ul>
-        </div>
     </header>
 
     <main class="main-section">

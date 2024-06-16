@@ -45,10 +45,10 @@
             
             <!-- LADO DIREITO -->
             <div class="cadastro">
-                <form class="formulario" method="post" action="#">
+                <form class="formulario" method="post" action="adicionar.php">
                     <div class="entrada-dados-cadastro">
                         <label for="nome_completo"><strong>Nome completo</strong></label>
-                        <input type="text" name="nome_completo" id="nome_completo" min="15" max="60" pattern="[A-z]" required>
+                        <input type="text" name="nome" id="nome" required>
                     </div>
                     
                     <div class="entrada-dados-cadastro">
@@ -58,7 +58,7 @@
                                     
                     <div class="entrada-dados-cadastro">
                         <label for="data_nascimento"><strong>Data de nascimento</strong></label>
-                        <input type="date" name="data_nascimento" id="data_nascimento" placeholder="dd/mm/aaaa" required>
+                        <input type="date" name="data_nasc" id="data_nascimento" placeholder="dd/mm/aaaa" required>
                     </div>
         
                     <div  class="entrada-dados-cadastro">
@@ -68,19 +68,19 @@
 
                     <div class="entrada-dados-cadastro">
                         <label for=""><strong>Senha</strong></label>
-                        <input type="password" name="senha" id="senha" min="8" max="8" pattern="[A-z]" required>
+                        <input type="password" name="senha" id="senha"  required>
                         <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
                     
                     <div class="entrada-dados-cadastro">
                         <label for=""><strong>Confirmar Senha</strong></label>
-                        <input type="password" name="conf_senha" id="conf_senha" min="8" max="8" pattern="[A-z]" required>
+                        <input type="password" name="conf_senha" id="conf_senha"  required>
                         <span class="aviso">*A senha deve conter 8 caracteres</span>
                     </div>
     
                     <div  class="entrada-dados-cadastro">
                         <label for="tel_celular"><strong>Telefone Celular</strong></label>
-                        <!--Localizar o erro--><input type="tel" name="tel_celular" id="tel_celular" onkeypress="mascaraTelefone()" maxlength="14" placeholder="(xx)xxxxx-xxxx" pattern="[0-9]{2}-[0-9]{9}" required>
+                        <!--Localizar o erro--><input type="tel" name="tel_celular" id="tel_celular" onkeypress="mascaraTelefone()" placeholder="(xx)xxxxx-xxxx" required>
                     </div>
         
                     <!--Endereço CEP-->
@@ -114,27 +114,27 @@
                         <h6>Sexo</h6>
                         <div class="boxInputs">
                             <div class="generoInput">
-                                <input type="radio" id="masculino" name="genero">
+                                <input type="radio" id="masculino" value="m" name="sexo">
                                 <label for="masculino">Masculino</label>
                             </div>
                             <div class="generoInput">
-                                <input type="radio" id="feminino" name="genero">
+                                <input type="radio" id="feminino" value="f" name="sexo">
                                 <label for="feminino">Feminino</label>
                             </div>
                             <div class="generoInput">
-                                <input type="radio" id="outro" name="genero">
+                                <input type="radio" id="outro" value="o" name="sexo">
                                 <label for="outro">Outro</label>
                             </div>
     
                             <div class="generoInput">
-                                <input type="radio" id="nao-responder" name="genero">
+                                <input type="radio" id="nao-responder" value="n" name="sexo">
                                 <label for="outro">Prefiro não responder</label>
                             </div>
                         </div>
                     </div>
         
                     <div class="botao-cadastro">
-                        <button class="botao-primario" type="submit" onclick="validacao_cadastro()">Cadastrar</button>
+                        <button class="botao-primario" type="submit" value="submit" onclick="validacao_cadastro()" >Cadastrar</button>
                     </div>
 
                     <div class="botao-cadastro">

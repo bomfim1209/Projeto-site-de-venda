@@ -33,24 +33,24 @@
                 <i id="item-lua" class="fa-solid fa-moon"></i>
             </div>
             
-            <form method="post" action="#">
+            <form method="post" action="logar.php">
                 <h1 class="titulo">Login</h1>
                 
                 <fieldset>
                     <label for="nome"><strong>Nome de usuário</strong></label>
                     <div class="entrada_dados">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" nome="usuario" id="email-validacao" placeholder="Usuário" required>
+                        <input type="text" name="email" id="email-validacao" placeholder="Usuário" required>
                     </div>
     
                     <label for="senha"><strong>Senha</strong></label>
                     <div class="entrada_dados">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" nome="senha" id="senha-validacao" placeholder="Senha" required>
+                        <input type="password" name="senha" id="senha" placeholder="Senha" required>
                     </div>
     
                     <div class="botao-login">
-                        <button class="botao-primario" type="submit" onclick="validacao()">Enviar</button>
+                        <button class="botao-primario" type="submit" name="submit" onclick="validacao()">Enviar</button>
                         ou
                         <button class="botao-secundario"><a href="cadastro.php">Cadastrar Novo Usuario</a></button>
                     </div>

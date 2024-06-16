@@ -1,13 +1,82 @@
-////////////////// COMPONENTES COMUNS //////////////////
-////// Teste de DropDown ///////
+// Função de verificar senha
+function verificarSenha() {
+    // Captura os valores dos campos
+    var senha = document.getElementById('senha').value;
+    var confirmarSenha = document.getElementById('confirmarSenha').value;
 
+    // Verifica se as senhas são iguais
+    if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem!");
+        return false; // Retorna false para impedir o envio do formulário
+    }
+
+    return true; // Retorna true se as senhas coincidirem
+}
+
+function validacao_cadastro(){
+    // Chama a função de verificação de senha
+    if (!verificarSenha()) {
+        return false; // Impede o envio do formulário se as senhas não coincidirem
+    }
+
+    // Validar CPF
+    const cpf = document.getElementById("cpf").value;
+    if (!validarCPF(cpf)) {
+        alert("CPF inválido!");
+        return false;
+    }
+
+    // Adicione outras validações aqui, se necessário
+
+    return true; // Permite o envio do formulário se tudo estiver correto
+}
+
+// Função de validar CPF
+function validarCPF(cpf) {	
+    cpf = cpf.replace(/[^\d]+/g,'');	
+    if(cpf == '') return false;	
+    // Elimina CPFs invalidos conhecidos	
+    if (cpf.length != 11 || 
+        cpf == "00000000000" || 
+        cpf == "11111111111" || 
+        cpf == "22222222222" || 
+        cpf == "33333333333" || 
+        cpf == "44444444444" || 
+        cpf == "55555555555" || 
+        cpf == "66666666666" || 
+        cpf == "77777777777" || 
+        cpf == "88888888888" || 
+        cpf == "99999999999")
+            return false;
+
+    // Valida 1o digito	
+    let add = 0;	
+    for (let i = 0; i < 9; i ++)		
+        add += parseInt(cpf.charAt(i)) * (10 - i);	
+    let rev = 11 - (add % 11);	
+    if (rev == 10 || rev == 11)		
+        rev = 0;	
+    if (rev != parseInt(cpf.charAt(9)))		
+        return false;
+
+    // Valida 2o digito	
+    add = 0;	
+    for (let i = 0; i < 10; i ++)		
+        add += parseInt(cpf.charAt(i)) * (11 - i);	
+    rev = 11 - (add % 11);	
+    if (rev == 10 || rev == 11)	
+        rev = 0;	
+    if (rev != parseInt(cpf.charAt(10)))
+        return false;		
+    return true;   
+}
+
+///////// Outras funções já existentes /////////
 function toggleMenu(){
     let subMenu = document.getElementById("subMenu");
-
     subMenu.classList.toggle("open-menu");
 }
 
-///////// Menu responsivo /////////
 function menuShow() {
     let menuMobile = document.querySelector('.mobile-menu');
     if (menuMobile.classList.contains('open')) {
@@ -19,7 +88,6 @@ function menuShow() {
     }
 };
 
-///////// Modo Dark /////////
 const login = document.getElementById("item-lua");
 
 login.addEventListener("click", () => {
@@ -38,33 +106,24 @@ login.addEventListener("click", () => {
 
     form.classList.remove("dark");
 });
-/////////////////////////////////////////////////////////////
-
-
-////////////////// TELA DE CADASTRO //////////////////
-///////// Mascaras dos Inputs /////////
 
 function mascaraCPF(){
     const cpfOrganizar = document.getElementById('cpf');
-
     cpfOrganizar.addEventListener('input', () => {
         let dado = cpfOrganizar.value.length;
-
         if(dado === 3 || dado === 7){
             cpfOrganizar.value += '.';
         }else if(dado === 11){
             cpfOrganizar.value += '-';
         }
-    })
+    });
 };
-
 
 function mascaraTelefone(){
     const teleOrganizar = document.getElementById('tel_celular');
-
     teleOrganizar.addEventListener('input', () => {
-        var tel = teleOrganizar.value.replace(/\D/g,"").substring(0,11); //Romove tudo o que não for numero do campo.
-        var telef = tel.split(""); //Separa a string em caracters individuais.
+        var tel = teleOrganizar.value.replace(/\D/g,"").substring(0,11);
+        var telef = tel.split("");
         var telefone = "";
 
         if(telef.length > 0){
@@ -78,10 +137,9 @@ function mascaraTelefone(){
         }
 
         teleOrganizar.value = telefone;
-    })
+    });
 };
 
-/////////// Verificação do CEP ///////////
 function buscarEndereco() {
     var cep = document.getElementById("cep").value;
     if (cep.length != 8) {
@@ -96,78 +154,11 @@ function buscarEndereco() {
             var endereco = JSON.parse(xhr.responseText);
             document.getElementById("logradouro").value = endereco.logradouro;
             document.getElementById("bairro").value = endereco.bairro;
-            //document.getElementById("uf").value = endereco.uf;
         }
     }
     xhr.send();
 }
 
-
-function validacao_cadastro(){
-    
-    ////////// VALIDAR SENHA //////////
-    senha = document.getElementById("senha").value;
-    conf_senha = document.getElementById("conf_enha").value;
-
-    if (senha != conf_senha) {
-        senhaC.setCustomValidity("Senhas diferentes!");
-        return false;
-    } else {
-        return true;
-    }
-    
-    
-    
-    
-    
-    const cpf = document.getElementById("cpf");
-    validacaoCPF();
-
-    /////////// CPF ///////////
-    function validarCPF(cpf) {	
-        cpf = cpf.replace(/[^\d]+/g,'');	
-        if(cpf == '') return false;	
-        // Elimina CPFs invalidos conhecidos	
-        if (cpf.length != 11 || 
-            cpf == "00000000000" || 
-            cpf == "11111111111" || 
-            cpf == "22222222222" || 
-            cpf == "33333333333" || 
-            cpf == "44444444444" || 
-            cpf == "55555555555" || 
-            cpf == "66666666666" || 
-            cpf == "77777777777" || 
-            cpf == "88888888888" || 
-            cpf == "99999999999")
-                return false;
-
-        // Valida 1o digito	
-        add = 0;	
-        for (i=0; i < 9; i ++)		
-            add += parseInt(cpf.charAt(i)) * (10 - i);	
-            rev = 11 - (add % 11);	
-            if (rev == 10 || rev == 11)		
-                rev = 0;	
-            if (rev != parseInt(cpf.charAt(9)))		
-                return false;
-
-        // Valida 2o digito	
-        add = 0;	
-        for (i = 0; i < 10; i ++)		
-            add += parseInt(cpf.charAt(i)) * (11 - i);	
-        rev = 11 - (add % 11);	
-        if (rev == 10 || rev == 11)	
-            rev = 0;	
-        if (rev != parseInt(cpf.charAt(10)))
-            return false;		
-        return true;   
-    }
-}
-/////////////////////////////////////////////////////////////
-
-
-////////////////// TELA DE LOGIN //////////////////
-///////// Validação tela de login /////////
 function validacao(){
     var email = document.getElementById("email-validacao");
     if(email.value == !email){
@@ -175,10 +166,9 @@ function validacao(){
         email.focus();
     }
 
-    var senha = document.getElementById("senha-validacao");
+    var senha = document.getElementById("senha");
     if(senha.value == !senha){
         alert("Senha não informada")
         senha.focus();
     }
-};
-/////////////////////////////////////////////////////////////
+}

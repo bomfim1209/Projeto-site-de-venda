@@ -82,6 +82,171 @@ header {
     font-size: 1.1rem;
 }
 
+/* DROPDOWN USUARIO */
+.user-pic {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-heigth 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: fit-content;
+  position: absolute;
+  right: 5px;
+}
+
+.sub-menu {
+  background: white;
+  padding: 35px;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+
+}
+
+.user-info h2 {
+  font-weight: 22px;
+
+
+}
+
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+.sub-menu-link p {
+  width: 100%;
+}
+
+.sub-menu-link img {
+  width: 40px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+
+}
+
+.sub-menu-link span {
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+  font-weight: 600;
+
+}
+
+/*.dropdown{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-img {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: url(./assets/profile-pic.jpg);
+  background-size: cover;
+}
+
+.profile-img i {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  font-size: 0.5rem;
+  color: greenyellow;
+}*/
+
+
+
+/*.nav-list2 {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list2 ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}*/
+
+.nav-item {
+  margin: 0 40px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  /*font-weight: 400;*/
+  color: #FFD80D;
+  padding: 10px;
+}
+
+.login-button{
+  margin: 0 40px;
+}
+
+.login-button a {
+  padding: 10px;
+  border-radius: 15px;
+  color: #FFD80D;font-size: 1.15rem;
+  text-decoration: none;
+}
+
+.login-button button a {
+  text-decoration: none;
+  color: rgb(225, 201, 16);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
 li {
   list-style-type: none;
 }
